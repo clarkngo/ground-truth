@@ -1,0 +1,26 @@
+# Experiment configs. Run with: uv run gt eval <name> [<name> ...] | all
+# Retrieval-only configs score which documents were retrieved, with no LLM call.
+configs:
+  # --- Retrieval sweeps
+  - {name: ret-fixed-dense, description: "Fixed 500-char windows, dense", chunking: fixed, chunk_size: 500, retriever: dense, retrieval_only: true}
+  - {name: ret-fixed-bm25, description: "Fixed 500-char windows, BM25", chunking: fixed, chunk_size: 500, retriever: bm25, retrieval_only: true}
+  - {name: ret-fixed-hybrid, description: "Fixed 500-char windows, hybrid (RRF)", chunking: fixed, chunk_size: 500, retriever: hybrid, retrieval_only: true}
+  - {name: ret-heading-dense, description: "Heading chunks, dense", retriever: dense, retrieval_only: true}
+  - {name: ret-heading-bm25, description: "Heading chunks, BM25", retriever: bm25, retrieval_only: true}
+  - {name: ret-heading-hybrid, description: "Heading chunks, hybrid (RRF)", retriever: hybrid, retrieval_only: true}
+  - {name: ret-heading-hybrid-k3, description: "Heading chunks, hybrid, k=3", retriever: hybrid, k: 3, retrieval_only: true}
+  - {name: ret-heading-hybrid-k8, description: "Heading chunks, hybrid, k=8", retriever: hybrid, k: 8, retrieval_only: true}
+
+  # --- CI gate: deterministic, no model server needed
+  - {name: ci-bm25, description: "CI regression gate: heading chunks, BM25", retriever: bm25, retrieval_only: true}
+
+  # --- End-to-end
+  - {name: baseline, description: "RAG: heading chunks, hybrid retrieval, k=5, qwen2.5:7b"}
+  - {name: dense-only, description: "RAG with dense retrieval only", retriever: dense}
+  - {name: fixed-chunks, description: "RAG with fixed 500-char chunks", chunking: fixed, chunk_size: 500}
+  - {name: model-llama3.1-8b, description: "Baseline RAG on llama3.1:8b", model: "llama3.1:8b"}
+  - {name: model-mistral-7b, description: "Baseline RAG on mistral:7b", model: "mistral:7b"}
+  - {name: model-qwen3.5-4b, description: "Baseline RAG on the smaller qwen3.5:4b", model: "qwen3.5:4b"}
+  - {name: agent, description: "Supervisor agent (plan, research, synthesize) on the baseline settings", pipeline: agent}
+  - {name: calculator, description: "Baseline RAG with a calculator tool for arithmetic", calculator: true}
+  - {name: agent-calculator, description: "Supervisor agent with the calculator tool", pipeline: agent, calculator: true}
