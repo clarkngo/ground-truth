@@ -1,0 +1,729 @@
+{
+ "config": {
+  "name": "ret-heading-hybrid",
+  "description": "Heading chunks, hybrid (RRF)",
+  "chunking": "heading",
+  "chunk_size": 800,
+  "chunk_overlap": 100,
+  "retriever": "hybrid",
+  "k": 5,
+  "embed_model": "nomic-embed-text",
+  "model": "qwen2.5:7b",
+  "pipeline": "rag",
+  "retrieval_only": true
+ },
+ "ran_at": "2026-10-14T02:34:01+00:00",
+ "duration_s": 1.3,
+ "summary": {
+  "questions": 58,
+  "retrieval_recall": 0.9896,
+  "retrieval_hit": 1.0,
+  "retrieval_mrr": 0.9792
+ },
+ "by_category": {
+  "factual": {
+   "questions": 21,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 1.0
+  },
+  "multi_hop": {
+   "questions": 11,
+   "retrieval_recall": 0.9545,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 1.0
+  },
+  "numeric": {
+   "questions": 8,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 0.9375
+  },
+  "temporal": {
+   "questions": 8,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 0.9375
+  },
+  "unanswerable": {
+   "questions": 10,
+   "retrieval_recall": null,
+   "retrieval_hit": null,
+   "retrieval_mrr": null
+  }
+ },
+ "questions": [
+  {
+   "id": "f01",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-transfer-credit",
+    "prog-bs-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f02",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-graduation",
+    "pol-sap",
+    "prog-bs-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f03",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-transfer-credit",
+    "pol-course-load",
+    "svc-internships",
+    "pol-sap"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f04",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-registration",
+    "fin-refunds",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f05",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-registration",
+    "pol-graduation",
+    "svc-advising",
+    "svc-library"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f06",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-academic-integrity",
+    "pol-ai-use-2024",
+    "pol-ai-use-2025"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f07",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-transfer-credit",
+    "pol-grading",
+    "pol-sap",
+    "svc-internships",
+    "prog-bs-cs"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f08",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-transfer-credit",
+    "svc-internships",
+    "pol-sap"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f09",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-sap",
+    "pol-transfer-credit"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f10",
+   "category": "factual",
+   "retrieved_docs": [
+    "pol-graduation",
+    "pol-sap",
+    "fin-scholarships",
+    "pol-course-load"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f11",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-research-computing",
+    "fin-tuition-2025-26",
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f12",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-research-computing"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f13",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "svc-research-computing",
+    "pol-ai-use-2024",
+    "pol-ai-use-2025"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f14",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "pol-sap",
+    "cal-2025-26",
+    "svc-advising",
+    "pol-registration"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f15",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-library",
+    "svc-research-computing",
+    "pol-registration"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f16",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-library",
+    "svc-advising",
+    "svc-research-computing"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f17",
+   "category": "factual",
+   "retrieved_docs": [
+    "cat-ai",
+    "cat-cs"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f18",
+   "category": "factual",
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f19",
+   "category": "factual",
+   "retrieved_docs": [
+    "cat-ds",
+    "prog-ms-ds",
+    "cat-cs"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f20",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-internships",
+    "cat-ai",
+    "svc-research-computing"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f21",
+   "category": "factual",
+   "retrieved_docs": [
+    "svc-internships",
+    "pol-course-load",
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n01",
+   "category": "numeric",
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n02",
+   "category": "numeric",
+   "retrieved_docs": [
+    "pol-course-load",
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 0.5
+  },
+  {
+   "id": "n03",
+   "category": "numeric",
+   "retrieved_docs": [
+    "pol-sap",
+    "pol-transfer-credit"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n04",
+   "category": "numeric",
+   "retrieved_docs": [
+    "fin-refunds",
+    "pol-registration",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n05",
+   "category": "numeric",
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "cat-ds",
+    "pol-course-load"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n06",
+   "category": "numeric",
+   "retrieved_docs": [
+    "svc-internships",
+    "cat-ai",
+    "pol-transfer-credit"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n07",
+   "category": "numeric",
+   "retrieved_docs": [
+    "pol-course-load",
+    "svc-advising",
+    "pol-grading",
+    "svc-internships"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n08",
+   "category": "numeric",
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m01",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "fin-refunds",
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-registration",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m02",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "cat-ai",
+    "prog-bs-ai"
+   ],
+   "retrieval_recall": 0.5,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m03",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "prog-bs-ai",
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m04",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "svc-advising",
+    "pol-registration"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m05",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "cal-2025-26",
+    "cat-ai",
+    "fin-tuition-2025-26",
+    "pol-ai-use-2025"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m06",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "cat-ai",
+    "prog-bs-ai",
+    "cal-2025-26"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m07",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m08",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-academic-integrity",
+    "pol-ai-use-2024"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m09",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "cat-cs",
+    "cat-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m10",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "fin-tuition-2025-26",
+    "cat-ds"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m11",
+   "category": "multi_hop",
+   "retrieved_docs": [
+    "cat-ai",
+    "cal-2025-26",
+    "prog-bs-ai"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t01",
+   "category": "temporal",
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-ai-use-2024"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t02",
+   "category": "temporal",
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t03",
+   "category": "temporal",
+   "retrieved_docs": [
+    "fin-tuition-2024-25",
+    "fin-tuition-2025-26",
+    "pol-course-load"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t04",
+   "category": "temporal",
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "svc-research-computing",
+    "pol-course-load"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t05",
+   "category": "temporal",
+   "retrieved_docs": [
+    "pol-ai-use-2024",
+    "pol-ai-use-2025"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t06",
+   "category": "temporal",
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-ai-use-2024"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t07",
+   "category": "temporal",
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "pol-ai-use-2024",
+    "svc-research-computing",
+    "svc-advising",
+    "pol-ai-use-2025"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t08",
+   "category": "temporal",
+   "retrieved_docs": [
+    "fin-tuition-2024-25",
+    "fin-tuition-2025-26",
+    "svc-research-computing"
+   ],
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 0.5
+  },
+  {
+   "id": "u01",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading",
+    "fin-tuition-2024-25",
+    "fin-tuition-2025-26"
+   ]
+  },
+  {
+   "id": "u02",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "svc-advising",
+    "pol-registration",
+    "prog-bs-cs",
+    "svc-it-accounts"
+   ]
+  },
+  {
+   "id": "u03",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "cat-ds"
+   ]
+  },
+  {
+   "id": "u04",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "svc-research-computing"
+   ]
+  },
+  {
+   "id": "u05",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "cal-2025-26",
+    "pol-course-load"
+   ]
+  },
+  {
+   "id": "u06",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "svc-library",
+    "svc-research-computing",
+    "pol-course-load"
+   ]
+  },
+  {
+   "id": "u07",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "cat-ai",
+    "prog-bs-ai"
+   ]
+  },
+  {
+   "id": "u08",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "cat-cs",
+    "cat-ai"
+   ]
+  },
+  {
+   "id": "u09",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "cat-ai",
+    "prog-bs-ai",
+    "cat-ds"
+   ]
+  },
+  {
+   "id": "u10",
+   "category": "unanswerable",
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading",
+    "pol-transfer-credit",
+    "svc-library"
+   ]
+  }
+ ]
+}

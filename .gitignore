@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+mlflow.db
+mlruns/
+mlartifacts/
+web/node_modules/
+web/dist/
+web/public/data/
+.claude/
+.DS_Store

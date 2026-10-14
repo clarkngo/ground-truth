@@ -1,0 +1,448 @@
+# Ground-truth questions about the fictional Larkspur corpus.
+# expect: every group must match the answer; any alternative within a group counts.
+# Alternatives are case-insensitive literals unless prefixed with 're:'. Unanswerable questions
+# have no expect: the correct behavior is to abstain.
+questions:
+- id: f01
+  category: factual
+  question: What minimum grade does a course need to count toward a student's major?
+  gold_docs:
+  - pol-grading
+  expect:
+  - - re:\bc\b
+    - '2.0'
+- id: f02
+  category: factual
+  question: How long does a student have to finish an Incomplete before it turns into an F?
+  gold_docs:
+  - pol-grading
+  expect:
+  - - two quarters
+    - 2 quarters
+- id: f03
+  category: factual
+  question: How many Pass/No Pass credits can count toward an undergraduate degree?
+  gold_docs:
+  - pol-grading
+  expect:
+  - - '12'
+- id: f04
+  category: factual
+  question: Until which week can a course be dropped without it appearing on the transcript?
+  gold_docs:
+  - pol-registration
+  expect:
+  - - week 2
+    - second week
+    - re:weeks? 1.{0,6}2
+- id: f05
+  category: factual
+  question: When does registration for the next quarter open?
+  gold_docs:
+  - pol-registration
+  expect:
+  - - week 7
+    - seventh week
+- id: f06
+  category: factual
+  question: How soon must an instructor report a suspected academic integrity violation?
+  gold_docs:
+  - pol-academic-integrity
+  expect:
+  - - 10 business days
+    - ten business days
+- id: f07
+  category: factual
+  question: What is the maximum number of transfer credits that can count toward a bachelor's degree?
+  gold_docs:
+  - pol-transfer-credit
+  expect:
+  - - '90'
+- id: f08
+  category: factual
+  question: Which AP scores earn transfer credit?
+  gold_docs:
+  - pol-transfer-credit
+  expect:
+  - - '4'
+  - - '5'
+- id: f09
+  category: factual
+  question: What share of attempted credits must financial aid recipients complete to meet the pace standard?
+  gold_docs:
+  - pol-sap
+  expect:
+  - - '67'
+- id: f10
+  category: factual
+  question: What cumulative GPA is required for magna cum laude?
+  gold_docs:
+  - pol-graduation
+  expect:
+  - - '3.7'
+- id: f11
+  category: factual
+  question: How many GPU-hours per quarter do students in AI lab courses get on the Kestrel cluster?
+  gold_docs:
+  - svc-research-computing
+  expect:
+  - - '40'
+- id: f12
+  category: factual
+  question: What is the longest a single job can run on the Kestrel GPU cluster?
+  gold_docs:
+  - svc-research-computing
+  expect:
+  - - 12 hours
+    - 12-hour
+    - twelve hours
+- id: f13
+  category: factual
+  question: Which multi-factor authentication methods can students use?
+  gold_docs:
+  - svc-it-accounts
+  expect:
+  - - authenticator
+  - - hardware
+    - security key
+- id: f14
+  category: factual
+  question: How long after a student's last enrolled quarter is their account deactivated?
+  gold_docs:
+  - svc-it-accounts
+  expect:
+  - - '180'
+- id: f15
+  category: factual
+  question: What are the library's hours on Saturdays during the quarter?
+  gold_docs:
+  - svc-library
+  expect:
+  - - '10'
+  - - '6'
+- id: f16
+  category: factual
+  question: How many people can a group study room hold?
+  gold_docs:
+  - svc-library
+  expect:
+  - - '6'
+    - six
+- id: f17
+  category: factual
+  question: What is the prerequisite for AI 340?
+  gold_docs:
+  - cat-ai
+  expect:
+  - - ai 210
+- id: f18
+  category: factual
+  question: In which quarter is AI 350 Agentic Systems offered?
+  gold_docs:
+  - cat-ai
+  expect:
+  - - fall
+- id: f19
+  category: factual
+  question: How many credits is the DS 590 capstone?
+  gold_docs:
+  - cat-ds
+  expect:
+  - - '8'
+    - eight
+- id: f20
+  category: factual
+  question: How many hours of supervised work does each internship credit require?
+  gold_docs:
+  - svc-internships
+  expect:
+  - - '30'
+- id: f21
+  category: factual
+  question: An undergraduate with 95 credits and a 2.4 GPA wants internship credit. Are they eligible?
+  gold_docs:
+  - svc-internships
+  expect:
+  - - '2.5'
+  - - re:\bno\b
+    - not eligible
+    - ineligible
+    - not meet
+- id: n01
+  category: numeric
+  question: In 2025-26, how much tuition does an undergraduate pay for a 15-credit quarter?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - 6,525
+    - '6525'
+- id: n02
+  category: numeric
+  question: A graduate student takes 9 credits in 2025-26. What is their tuition for that quarter?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - 5,985
+    - '5985'
+- id: n03
+  category: numeric
+  question: Under the financial aid progress rules, what is the maximum number of attempted credits for a 180-credit bachelor's degree?
+  gold_docs:
+  - pol-sap
+  expect:
+  - - '270'
+- id: n04
+  category: numeric
+  question: What percentage of tuition is refunded if a course is dropped in week 4?
+  gold_docs:
+  - fin-refunds
+  expect:
+  - - '50'
+- id: n05
+  category: numeric
+  question: How many quarters does a full-time M.S. in Data Science student need to finish the degree?
+  gold_docs:
+  - prog-ms-ds
+  expect:
+  - - '5'
+    - five
+- id: n06
+  category: numeric
+  question: How many hours of supervised work are needed for a 4-credit internship?
+  gold_docs:
+  - svc-internships
+  expect:
+  - - '120'
+- id: n07
+  category: numeric
+  question: What is the most credits an undergraduate can take in a quarter without advisor approval?
+  gold_docs:
+  - pol-course-load
+  expect:
+  - - '18'
+- id: n08
+  category: numeric
+  question: In Fall 2025, an undergraduate takes 15 credits, including two AI courses that have labs. What is the total for tuition plus all fees?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - 6,825
+    - '6825'
+  note: 15 x $435 + $110 technology + 2 x $75 lab + $40 GPU compute
+- id: m01
+  category: multi_hop
+  question: A student withdraws from a 5-credit undergraduate course in week 3 of Fall 2025. How much tuition is refunded?
+  gold_docs:
+  - fin-tuition-2025-26
+  - fin-refunds
+  expect:
+  - - 1,631.25
+    - '1631.25'
+    - 1,631
+    - '1631'
+  note: 5 x $435 = $2,175, refunded at 75%
+- id: m02
+  category: multi_hop
+  question: Which courses must a student complete before taking AI 330, including prerequisites of prerequisites?
+  gold_docs:
+  - cat-ai
+  - cat-math
+  expect:
+  - - ai 210
+  - - math 220
+  - - cs 160
+  - - math 201
+- id: m03
+  category: multi_hop
+  question: Which required core course of the B.S. in Artificial Intelligence is offered only in Spring?
+  gold_docs:
+  - prog-bs-ai
+  - cat-ai
+  expect:
+  - - ai 340
+- id: m04
+  category: multi_hop
+  question: What happens if a first-year student skips their advising meeting, and when does registration open?
+  gold_docs:
+  - svc-advising
+  - pol-registration
+  expect:
+  - - hold
+  - - week 7
+    - seventh week
+- id: m05
+  category: multi_hop
+  question: AI 350 is offered in one quarter. On what date does that quarter start in the 2025-26 year?
+  gold_docs:
+  - cat-ai
+  - cal-2025-26
+  expect:
+  - - september 29
+    - sept. 29
+    - sep 29
+    - 9/29
+- id: m06
+  category: multi_hop
+  question: A student wants to take AI 410 in Spring 2026. Which two AI courses must they have completed, and what date does that quarter start?
+  gold_docs:
+  - cat-ai
+  - cal-2025-26
+  expect:
+  - - ai 330
+  - - ai 340
+  - - march 30
+    - mar 30
+    - 3/30
+- id: m07
+  category: multi_hop
+  question: What GPA keeps the Larkspur Merit Scholarship, and is that GPA high enough for cum laude?
+  gold_docs:
+  - fin-scholarships
+  - pol-graduation
+  expect:
+  - - '3.2'
+  - - '3.5'
+  - - re:\b(not|no|isn't|is not|below|lower|falls short|insufficient)\b
+- id: m08
+  category: multi_hop
+  question: In Fall 2025, a student submits AI-assisted work without disclosing it. What level of violation is that, and who handles it?
+  gold_docs:
+  - pol-ai-use-2025
+  - pol-academic-integrity
+  expect:
+  - - level 2
+  - - board
+- id: m09
+  category: multi_hop
+  question: Which course is a prerequisite for both CS 310 and AI 210?
+  gold_docs:
+  - cat-cs
+  - cat-ai
+  expect:
+  - - math 201
+- id: m10
+  category: multi_hop
+  question: At 2025-26 graduate rates, what is the total tuition for the full M.S. in Data Science program?
+  gold_docs:
+  - prog-ms-ds
+  - fin-tuition-2025-26
+  expect:
+  - - 29,925
+    - '29925'
+  note: 45 credits x $665
+- id: m11
+  category: multi_hop
+  question: A student finishes AI 210 and AI 220 by the end of Winter 2026. What is the earliest quarter they can take MLOps, and what date does it start?
+  gold_docs:
+  - cat-ai
+  - cal-2025-26
+  expect:
+  - - spring
+  - - march 30
+    - mar 30
+    - 3/30
+- id: t01
+  category: temporal
+  question: Is generative AI allowed on coursework by default?
+  gold_docs:
+  - pol-ai-use-2025
+  expect:
+  - - permitted
+    - allowed
+    - 'yes'
+  - - disclos
+- id: t02
+  category: temporal
+  question: What is the current undergraduate tuition per credit?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - '435'
+- id: t03
+  category: temporal
+  question: What was the undergraduate tuition per credit in 2024-25?
+  gold_docs:
+  - fin-tuition-2024-25
+  expect:
+  - - '415'
+- id: t04
+  category: temporal
+  question: How much is the technology fee per quarter now?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - '110'
+- id: t05
+  category: temporal
+  question: Under the 2024 policy, what was the default rule for using generative AI on graded work?
+  gold_docs:
+  - pol-ai-use-2024
+  expect:
+  - - prohibit
+    - not allowed
+    - not permitted
+- id: t06
+  category: temporal
+  question: Under the current policy, what must an AI-use disclosure statement include?
+  gold_docs:
+  - pol-ai-use-2025
+  expect:
+  - - tool
+  - - how
+    - describ
+- id: t07
+  category: temporal
+  question: Can students use SMS text-message codes for multi-factor authentication?
+  gold_docs:
+  - svc-it-accounts
+  expect:
+  - - re:\bno\b
+    - not
+    - no longer
+- id: t08
+  category: temporal
+  question: What is the lab fee per lab course in 2025-26?
+  gold_docs:
+  - fin-tuition-2025-26
+  expect:
+  - - '75'
+- id: u01
+  category: unanswerable
+  question: How much is a student parking permit at Larkspur?
+  gold_docs: []
+- id: u02
+  category: unanswerable
+  question: What is the name of the current Dean of Students?
+  gold_docs: []
+- id: u03
+  category: unanswerable
+  question: What is the acceptance rate for the M.S. in Data Science?
+  gold_docs: []
+- id: u04
+  category: unanswerable
+  question: How many GPUs does the Kestrel cluster have?
+  gold_docs: []
+- id: u05
+  category: unanswerable
+  question: What will undergraduate tuition be in 2026-27?
+  gold_docs: []
+- id: u06
+  category: unanswerable
+  question: What time does the library open on public holidays?
+  gold_docs: []
+- id: u07
+  category: unanswerable
+  question: Who teaches AI 350 Agentic Systems?
+  gold_docs: []
+- id: u08
+  category: unanswerable
+  question: What is the maximum class size for CS 160?
+  gold_docs: []
+- id: u09
+  category: unanswerable
+  question: Which programming framework is used in AI 330 Deep Learning?
+  gold_docs: []
+- id: u10
+  category: unanswerable
+  question: Does Larkspur have a study-abroad program?
+  gold_docs: []

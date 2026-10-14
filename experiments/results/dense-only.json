@@ -1,0 +1,2351 @@
+{
+ "config": {
+  "name": "dense-only",
+  "description": "RAG with dense retrieval only",
+  "chunking": "heading",
+  "chunk_size": 800,
+  "chunk_overlap": 100,
+  "retriever": "dense",
+  "k": 5,
+  "embed_model": "nomic-embed-text",
+  "model": "qwen2.5:7b",
+  "pipeline": "rag",
+  "retrieval_only": false
+ },
+ "ran_at": "2026-10-14T02:59:36+00:00",
+ "duration_s": 724.9,
+ "summary": {
+  "questions": 58,
+  "retrieval_recall": 0.9792,
+  "retrieval_hit": 1.0,
+  "retrieval_mrr": 0.9792,
+  "accuracy": 0.8966,
+  "answerable_accuracy": 0.875,
+  "correct_refusals": 1.0,
+  "false_refusals": 0.0,
+  "citation_validity": 1.0,
+  "cites_gold": 1.0,
+  "latency_p50_ms": 9503,
+  "latency_p95_ms": 39958,
+  "tokens_per_question": 556
+ },
+ "by_category": {
+  "factual": {
+   "questions": 21,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 1.0,
+   "accuracy": 1.0,
+   "answerable_accuracy": 1.0,
+   "correct_refusals": null,
+   "false_refusals": 0.0,
+   "citation_validity": 1.0,
+   "cites_gold": 1.0,
+   "latency_p50_ms": 9132,
+   "latency_p95_ms": 11220,
+   "tokens_per_question": 526
+  },
+  "multi_hop": {
+   "questions": 11,
+   "retrieval_recall": 0.9091,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 1.0,
+   "accuracy": 0.5455,
+   "answerable_accuracy": 0.5455,
+   "correct_refusals": null,
+   "false_refusals": 0.0,
+   "citation_validity": 1.0,
+   "cites_gold": 1.0,
+   "latency_p50_ms": 12388,
+   "latency_p95_ms": 45718,
+   "tokens_per_question": 615
+  },
+  "numeric": {
+   "questions": 8,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 0.9375,
+   "accuracy": 0.875,
+   "answerable_accuracy": 0.875,
+   "correct_refusals": null,
+   "false_refusals": 0.0,
+   "citation_validity": 1.0,
+   "cites_gold": 1.0,
+   "latency_p50_ms": 10934,
+   "latency_p95_ms": 56697,
+   "tokens_per_question": 585
+  },
+  "temporal": {
+   "questions": 8,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": 1.0,
+   "retrieval_mrr": 0.9375,
+   "accuracy": 1.0,
+   "answerable_accuracy": 1.0,
+   "correct_refusals": null,
+   "false_refusals": 0.0,
+   "citation_validity": 1.0,
+   "cites_gold": 1.0,
+   "latency_p50_ms": 10160,
+   "latency_p95_ms": 13069,
+   "tokens_per_question": 530
+  },
+  "unanswerable": {
+   "questions": 10,
+   "retrieval_recall": null,
+   "retrieval_hit": null,
+   "retrieval_mrr": null,
+   "accuracy": 1.0,
+   "answerable_accuracy": null,
+   "correct_refusals": 1.0,
+   "false_refusals": null,
+   "citation_validity": null,
+   "cites_gold": null,
+   "latency_p50_ms": 7058,
+   "latency_p95_ms": 13266,
+   "tokens_per_question": 554
+  }
+ },
+ "questions": [
+  {
+   "id": "f01",
+   "category": "factual",
+   "answer": "A course counts toward a student's major only with a grade of C (2.0) or higher [pol-grading].",
+   "citations": [
+    "pol-grading"
+   ],
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-transfer-credit"
+   ],
+   "retrieved_chunks": [
+    "pol-grading#1",
+    "pol-grading#3",
+    "pol-grading#2",
+    "pol-grading#0",
+    "pol-transfer-credit#1"
+   ],
+   "latency_ms": 7677,
+   "prompt_tokens": 586,
+   "output_tokens": 27,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A course counts toward a student's major only with a grade of C (2.0) or higher [pol-grading].",
+     "latency_ms": 7676.5869579976425
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f02",
+   "category": "factual",
+   "answer": "A student has two quarters to complete the remaining work for an Incomplete before it converts to an F. [pol-grading]",
+   "citations": [
+    "pol-grading"
+   ],
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-sap",
+    "pol-registration"
+   ],
+   "retrieved_chunks": [
+    "pol-grading#2",
+    "pol-sap#1",
+    "pol-sap#2",
+    "pol-grading#3",
+    "pol-registration#3"
+   ],
+   "latency_ms": 9447,
+   "prompt_tokens": 575,
+   "output_tokens": 27,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A student has two quarters to complete the remaining work for an Incomplete before it converts to an F. [pol-grading]",
+     "latency_ms": 9446.663042006548
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f03",
+   "category": "factual",
+   "answer": "Undergraduates may count at most 12 credits of Pass/No Pass coursework toward a degree. [pol-grading]",
+   "citations": [
+    "pol-grading"
+   ],
+   "retrieved_docs": [
+    "pol-grading",
+    "pol-transfer-credit",
+    "pol-course-load",
+    "prog-bs-ai",
+    "prog-bs-cs"
+   ],
+   "retrieved_chunks": [
+    "pol-grading#3",
+    "pol-transfer-credit#0",
+    "pol-course-load#0",
+    "prog-bs-ai#2",
+    "prog-bs-cs#2"
+   ],
+   "latency_ms": 6387,
+   "prompt_tokens": 446,
+   "output_tokens": 27,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Undergraduates may count at most 12 credits of Pass/No Pass coursework toward a degree. [pol-grading]",
+     "latency_ms": 6386.622707999777
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f04",
+   "category": "factual",
+   "answer": "A course can be dropped until the end of week 2 without it appearing on the transcript [pol-registration].",
+   "citations": [
+    "pol-registration"
+   ],
+   "retrieved_docs": [
+    "pol-registration",
+    "fin-refunds"
+   ],
+   "retrieved_chunks": [
+    "pol-registration#2",
+    "pol-registration#3",
+    "pol-registration#1",
+    "fin-refunds#0",
+    "pol-registration#0"
+   ],
+   "latency_ms": 9852,
+   "prompt_tokens": 537,
+   "output_tokens": 23,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A course can be dropped until the end of week 2 without it appearing on the transcript [pol-registration].",
+     "latency_ms": 9852.038457989693
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f05",
+   "category": "factual",
+   "answer": "Registration for the next quarter opens in week 7 of the current quarter. [pol-registration]",
+   "citations": [
+    "pol-registration"
+   ],
+   "retrieved_docs": [
+    "pol-registration",
+    "cal-2025-26",
+    "pol-graduation",
+    "svc-library"
+   ],
+   "retrieved_chunks": [
+    "pol-registration#0",
+    "pol-registration#1",
+    "cal-2025-26#0",
+    "pol-graduation#0",
+    "svc-library#0"
+   ],
+   "latency_ms": 10794,
+   "prompt_tokens": 594,
+   "output_tokens": 20,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Registration for the next quarter opens in week 7 of the current quarter. [pol-registration]",
+     "latency_ms": 10794.473374990048
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f06",
+   "category": "factual",
+   "answer": "An instructor must report a suspected academic integrity violation within 10 business days of discovering it. [pol-academic-integrity]",
+   "citations": [
+    "pol-academic-integrity"
+   ],
+   "retrieved_docs": [
+    "pol-academic-integrity",
+    "pol-ai-use-2024",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "pol-academic-integrity#1",
+    "pol-academic-integrity#2",
+    "pol-academic-integrity#0",
+    "pol-ai-use-2024#3",
+    "pol-sap#2"
+   ],
+   "latency_ms": 9566,
+   "prompt_tokens": 477,
+   "output_tokens": 27,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "An instructor must report a suspected academic integrity violation within 10 business days of discovering it. [pol-academic-integrity]",
+     "latency_ms": 9565.723416017136
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f07",
+   "category": "factual",
+   "answer": "The maximum number of transfer credits that can count toward a bachelor's degree is 90. [pol-transfer-credit]",
+   "citations": [
+    "pol-transfer-credit"
+   ],
+   "retrieved_docs": [
+    "pol-transfer-credit",
+    "prog-bs-cs",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "pol-transfer-credit#0",
+    "pol-transfer-credit#2",
+    "pol-transfer-credit#1",
+    "prog-bs-cs#2",
+    "pol-grading#3"
+   ],
+   "latency_ms": 8065,
+   "prompt_tokens": 455,
+   "output_tokens": 26,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The maximum number of transfer credits that can count toward a bachelor's degree is 90. [pol-transfer-credit]",
+     "latency_ms": 8065.468957996927
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f08",
+   "category": "factual",
+   "answer": "AP scores of 4 or 5 earn transfer credit [pol-transfer-credit].",
+   "citations": [
+    "pol-transfer-credit"
+   ],
+   "retrieved_docs": [
+    "pol-transfer-credit",
+    "pol-grading",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "pol-transfer-credit#2",
+    "pol-transfer-credit#0",
+    "pol-transfer-credit#1",
+    "pol-grading#3",
+    "pol-sap#1"
+   ],
+   "latency_ms": 6070,
+   "prompt_tokens": 513,
+   "output_tokens": 18,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "AP scores of 4 or 5 earn transfer credit [pol-transfer-credit].",
+     "latency_ms": 6069.9444170168135
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f09",
+   "category": "factual",
+   "answer": "To meet the pace standard, financial aid recipients must complete at least 67% of all attempted credits. [pol-sap]",
+   "citations": [
+    "pol-sap"
+   ],
+   "retrieved_docs": [
+    "pol-sap",
+    "pol-transfer-credit",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "pol-sap#1",
+    "pol-sap#0",
+    "pol-sap#2",
+    "pol-transfer-credit#2",
+    "pol-course-load#0"
+   ],
+   "latency_ms": 9047,
+   "prompt_tokens": 493,
+   "output_tokens": 28,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "To meet the pace standard, financial aid recipients must complete at least 67% of all attempted credits. [pol-sap]",
+     "latency_ms": 9047.027416992933
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f10",
+   "category": "factual",
+   "answer": "The cumulative GPA required for magna cum laude is 3.7 or higher [pol-graduation].",
+   "citations": [
+    "pol-graduation"
+   ],
+   "retrieved_docs": [
+    "pol-graduation",
+    "pol-sap",
+    "pol-grading",
+    "fin-scholarships"
+   ],
+   "retrieved_chunks": [
+    "pol-graduation#2",
+    "pol-sap#1",
+    "pol-graduation#1",
+    "pol-grading#1",
+    "fin-scholarships#1"
+   ],
+   "latency_ms": 7907,
+   "prompt_tokens": 563,
+   "output_tokens": 23,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The cumulative GPA required for magna cum laude is 3.7 or higher [pol-graduation].",
+     "latency_ms": 7907.28066698648
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f11",
+   "category": "factual",
+   "answer": "Students in AI lab courses get 40 GPU-hours per quarter on the Kestrel cluster. [svc-research-computing]",
+   "citations": [
+    "svc-research-computing"
+   ],
+   "retrieved_docs": [
+    "svc-research-computing",
+    "fin-tuition-2025-26",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "svc-research-computing#0",
+    "svc-research-computing#1",
+    "fin-tuition-2025-26#2",
+    "svc-research-computing#4",
+    "cat-ai#9"
+   ],
+   "latency_ms": 11123,
+   "prompt_tokens": 528,
+   "output_tokens": 29,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Students in AI lab courses get 40 GPU-hours per quarter on the Kestrel cluster. [svc-research-computing]",
+     "latency_ms": 11123.394291003933
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f12",
+   "category": "factual",
+   "answer": "A single job may run for at most 12 hours of wall time. [svc-research-computing]",
+   "citations": [
+    "svc-research-computing"
+   ],
+   "retrieved_docs": [
+    "svc-research-computing"
+   ],
+   "retrieved_chunks": [
+    "svc-research-computing#2",
+    "svc-research-computing#0",
+    "svc-research-computing#4",
+    "svc-research-computing#3",
+    "svc-research-computing#1"
+   ],
+   "latency_ms": 8923,
+   "prompt_tokens": 437,
+   "output_tokens": 25,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A single job may run for at most 12 hours of wall time. [svc-research-computing]",
+     "latency_ms": 8923.016167012975
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f13",
+   "category": "factual",
+   "answer": "Students must use an authenticator app or a hardware security key for multi-factor authentication. Text-message (SMS) codes are no longer accepted as of Fall 2025 [svc-it-accounts].",
+   "citations": [
+    "svc-it-accounts"
+   ],
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "svc-research-computing",
+    "cat-ai",
+    "pol-ai-use-2024"
+   ],
+   "retrieved_chunks": [
+    "svc-it-accounts#0",
+    "svc-it-accounts#1",
+    "svc-research-computing#0",
+    "cat-ai#1",
+    "pol-ai-use-2024#2"
+   ],
+   "latency_ms": 12286,
+   "prompt_tokens": 472,
+   "output_tokens": 42,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Students must use an authenticator app or a hardware security key for multi-factor authentication. Text-message (SMS) codes are no longer accepted as of Fall 2025 [svc-it-accounts].",
+     "latency_ms": 12285.693082987564
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f14",
+   "category": "factual",
+   "answer": "Student accounts are deactivated 180 days after the student's last enrolled quarter [svc-it-accounts].",
+   "citations": [
+    "svc-it-accounts"
+   ],
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "pol-registration",
+    "pol-sap",
+    "pol-academic-integrity"
+   ],
+   "retrieved_chunks": [
+    "svc-it-accounts#2",
+    "pol-registration#3",
+    "pol-registration#0",
+    "pol-sap#2",
+    "pol-academic-integrity#2"
+   ],
+   "latency_ms": 11220,
+   "prompt_tokens": 462,
+   "output_tokens": 23,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Student accounts are deactivated 180 days after the student's last enrolled quarter [svc-it-accounts].",
+     "latency_ms": 11219.834165996872
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f15",
+   "category": "factual",
+   "answer": "The library's hours on Saturdays during the quarter are from 10 a.m. to 6 p.m. [svc-library]",
+   "citations": [
+    "svc-library"
+   ],
+   "retrieved_docs": [
+    "svc-library",
+    "pol-registration",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "svc-library#0",
+    "svc-library#1",
+    "pol-registration#0",
+    "svc-library#2",
+    "cal-2025-26#0"
+   ],
+   "latency_ms": 10843,
+   "prompt_tokens": 583,
+   "output_tokens": 28,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The library's hours on Saturdays during the quarter are from 10 a.m. to 6 p.m. [svc-library]",
+     "latency_ms": 10842.953207989922
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f16",
+   "category": "factual",
+   "answer": "A group study room can hold up to 6 people. [svc-library]",
+   "citations": [
+    "svc-library"
+   ],
+   "retrieved_docs": [
+    "svc-library",
+    "svc-research-computing"
+   ],
+   "retrieved_chunks": [
+    "svc-library#2",
+    "svc-research-computing#1",
+    "svc-library#1",
+    "svc-research-computing#0",
+    "svc-research-computing#3"
+   ],
+   "latency_ms": 7490,
+   "prompt_tokens": 418,
+   "output_tokens": 17,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A group study room can hold up to 6 people. [svc-library]",
+     "latency_ms": 7490.470208984334
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f17",
+   "category": "factual",
+   "answer": "The prerequisite for AI 340 Natural Language Processing and Large Language Models is AI 210 [cat-ai].",
+   "citations": [
+    "cat-ai"
+   ],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#5",
+    "cat-ai#9",
+    "cat-ai#7",
+    "cat-ai#2",
+    "cat-ai#4"
+   ],
+   "latency_ms": 9361,
+   "prompt_tokens": 507,
+   "output_tokens": 27,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The prerequisite for AI 340 Natural Language Processing and Large Language Models is AI 210 [cat-ai].",
+     "latency_ms": 9361.415666993707
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f18",
+   "category": "factual",
+   "answer": "AI 350 Agentic Systems is offered in the Fall quarter. [cat-ai]",
+   "citations": [
+    "cat-ai"
+   ],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#5",
+    "cat-ai#9",
+    "cat-ai#7",
+    "cat-ai#6",
+    "cat-ai#3"
+   ],
+   "latency_ms": 5886,
+   "prompt_tokens": 502,
+   "output_tokens": 21,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "AI 350 Agentic Systems is offered in the Fall quarter. [cat-ai]",
+     "latency_ms": 5885.646208014805
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f19",
+   "category": "factual",
+   "answer": "DS 590 Data Science Capstone is 8 credits. [cat-ds]",
+   "citations": [
+    "cat-ds"
+   ],
+   "retrieved_docs": [
+    "cat-ds",
+    "cat-cs",
+    "prog-ms-ds",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ds#4",
+    "cat-ds#0",
+    "cat-cs#6",
+    "prog-ms-ds#2",
+    "cat-ai#9"
+   ],
+   "latency_ms": 9132,
+   "prompt_tokens": 496,
+   "output_tokens": 20,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "DS 590 Data Science Capstone is 8 credits. [cat-ds]",
+     "latency_ms": 9132.048208994092
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f20",
+   "category": "factual",
+   "answer": "Each credit of an internship requires 30 hours of supervised work. [svc-internships]",
+   "citations": [
+    "svc-internships"
+   ],
+   "retrieved_docs": [
+    "svc-internships",
+    "cat-ai",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "svc-internships#1",
+    "svc-internships#0",
+    "cat-ai#8",
+    "svc-internships#2",
+    "pol-course-load#0"
+   ],
+   "latency_ms": 9559,
+   "prompt_tokens": 420,
+   "output_tokens": 21,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Each credit of an internship requires 30 hours of supervised work. [svc-internships]",
+     "latency_ms": 9558.756084006745
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "f21",
+   "category": "factual",
+   "answer": "No, they are not eligible because they do not meet the cumulative GPA requirement of 2.5 or higher [svc-internships].",
+   "citations": [
+    "svc-internships"
+   ],
+   "retrieved_docs": [
+    "svc-internships",
+    "pol-course-load",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "svc-internships#0",
+    "svc-internships#1",
+    "pol-course-load#0",
+    "svc-internships#2",
+    "pol-grading#3"
+   ],
+   "latency_ms": 7438,
+   "prompt_tokens": 448,
+   "output_tokens": 29,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "No, they are not eligible because they do not meet the cumulative GPA requirement of 2.5 or higher [svc-internships].",
+     "latency_ms": 7437.879834003979
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n01",
+   "category": "numeric",
+   "answer": "An undergraduate pays $435 per credit for a 15-credit quarter, so the tuition is calculated as $435 * 15 = $6,525. [fin-tuition-2025-26]",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "pol-course-load#0",
+    "cal-2025-26#0",
+    "fin-tuition-2025-26#0"
+   ],
+   "latency_ms": 15137,
+   "prompt_tokens": 642,
+   "output_tokens": 54,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "An undergraduate pays $435 per credit for a 15-credit quarter, so the tuition is calculated as $435 * 15 = $6,525. [fin-tuition-2025-26]",
+     "latency_ms": 15136.812041979283
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n02",
+   "category": "numeric",
+   "answer": "The tuition for a graduate student taking 9 credits in 2025-26 is calculated as follows: \\(9 \\text{ credits} \\times \\$665/\\text{credit} = \\$5,985\\). [fin-tuition-2025-26]",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "pol-course-load",
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "pol-course-load#1",
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "cal-2025-26#0",
+    "pol-course-load#0"
+   ],
+   "latency_ms": 56697,
+   "prompt_tokens": 600,
+   "output_tokens": 65,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The tuition for a graduate student taking 9 credits in 2025-26 is calculated as follows: \\(9 \\text{ credits} \\times \\$665/\\text{credit} = \\$5,985\\). [fin-tuition-2025-26]",
+     "latency_ms": 56697.40812497912
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 0.5
+  },
+  {
+   "id": "n03",
+   "category": "numeric",
+   "answer": "The maximum number of attempted credits for a 180-credit bachelor's degree under the financial aid progress rules is 270, which is 150% of the required credits [pol-sap].",
+   "citations": [
+    "pol-sap"
+   ],
+   "retrieved_docs": [
+    "pol-sap",
+    "pol-transfer-credit",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "pol-sap#1",
+    "pol-transfer-credit#0",
+    "pol-sap#0",
+    "pol-sap#2",
+    "pol-grading#3"
+   ],
+   "latency_ms": 11722,
+   "prompt_tokens": 510,
+   "output_tokens": 46,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The maximum number of attempted credits for a 180-credit bachelor's degree under the financial aid progress rules is 270, which is 150% of the required credits [pol-sap].",
+     "latency_ms": 11722.252042003674
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n04",
+   "category": "numeric",
+   "answer": "According to the Tuition Refund Schedule, if a course is dropped in week 4, 50% of the tuition is refunded. [fin-refunds]",
+   "citations": [
+    "fin-refunds"
+   ],
+   "retrieved_docs": [
+    "fin-refunds",
+    "pol-registration",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "fin-refunds#0",
+    "pol-registration#3",
+    "pol-registration#2",
+    "pol-registration#1",
+    "pol-course-load#1"
+   ],
+   "latency_ms": 10147,
+   "prompt_tokens": 513,
+   "output_tokens": 35,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "According to the Tuition Refund Schedule, if a course is dropped in week 4, 50% of the tuition is refunded. [fin-refunds]",
+     "latency_ms": 10146.873916994082
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n05",
+   "category": "numeric",
+   "answer": "A full-time M.S. in Data Science student taking 9 credits per quarter needs 5 quarters to finish the degree. [prog-ms-ds]",
+   "citations": [
+    "prog-ms-ds"
+   ],
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "pol-course-load",
+    "cat-ds"
+   ],
+   "retrieved_chunks": [
+    "prog-ms-ds#0",
+    "prog-ms-ds#2",
+    "pol-course-load#1",
+    "cat-ds#1",
+    "cat-ds#4"
+   ],
+   "latency_ms": 10129,
+   "prompt_tokens": 468,
+   "output_tokens": 32,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "A full-time M.S. in Data Science student taking 9 credits per quarter needs 5 quarters to finish the degree. [prog-ms-ds]",
+     "latency_ms": 10129.283000016585
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n06",
+   "category": "numeric",
+   "answer": "For a 4-credit internship, 120 hours of supervised work are needed. [svc-internships]",
+   "citations": [
+    "svc-internships"
+   ],
+   "retrieved_docs": [
+    "svc-internships",
+    "cat-ai",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "svc-internships#1",
+    "cat-ai#8",
+    "svc-internships#0",
+    "svc-internships#2",
+    "pol-course-load#0"
+   ],
+   "latency_ms": 7823,
+   "prompt_tokens": 424,
+   "output_tokens": 26,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "For a 4-credit internship, 120 hours of supervised work are needed. [svc-internships]",
+     "latency_ms": 7823.15420897794
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n07",
+   "category": "numeric",
+   "answer": "An undergraduate can take up to 18 credits per quarter without advisor approval. [pol-course-load]",
+   "citations": [
+    "pol-course-load"
+   ],
+   "retrieved_docs": [
+    "pol-course-load",
+    "pol-grading",
+    "svc-advising",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "pol-course-load#0",
+    "pol-course-load#1",
+    "pol-grading#3",
+    "svc-advising#0",
+    "pol-sap#1"
+   ],
+   "latency_ms": 9245,
+   "prompt_tokens": 498,
+   "output_tokens": 22,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "An undergraduate can take up to 18 credits per quarter without advisor approval. [pol-course-load]",
+     "latency_ms": 9245.46674999874
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "n08",
+   "category": "numeric",
+   "answer": "First, calculate the tuition: \\(15 \\text{ credits} \\times \\$435/\\text{credit} = \\$6,525\\).\n\nNext, calculate the technology fee: \\(15 \\text{ credits} \\times \\$110 = \\$1,650\\).\n\nThen, calculate the lab fees for the two AI courses: \\(2 \\times \\$75 = \\$150\\).\n\nFinally, calculate the GPU compute fee: Since the student is enrolled in at least two AI courses with labs, the fee is \\(1 \\times \\$40 = \\$40\\).\n\nAdding these together: \\(\\$6,525 + \\$1,650 + \\$150 + \\$40 = \\$8,365\\).\n\nThe total for tuition plus all fees in Fall 2025 is \\$8,365. [fin-tuition-2025-26]",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "prog-bs-ai"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2025-26#2",
+    "fin-tuition-2024-25#1",
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "prog-bs-ai#0"
+   ],
+   "latency_ms": 36813,
+   "prompt_tokens": 546,
+   "output_tokens": 200,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "First, calculate the tuition: \\(15 \\text{ credits} \\times \\$435/\\text{credit} = \\$6,525\\).\n\nNext, calculate the technology fee: \\(15 \\text{ credits} \\times \\$110 = \\$1,650\\).\n\nThen, calculate the lab fees for the two AI courses: \\(2 \\times \\$75 = \\$150\\).\n\nFinally, calculate the GPU compute fee: Since the student is enrolled in at least two AI courses with labs, the fee is \\(1 \\times \\$40 = \\$40\\).\n\nAdding these together: \\(\\$6,525 + \\$1,650 + \\$150 + \\$40 = \\$8,365\\).\n\nThe total for tuition plus all fees in Fall 2025 is \\$8,365. [fin-tuition-2025-26]",
+     "latency_ms": 36812.52295902232
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "6,825",
+     "6825"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m01",
+   "category": "multi_hop",
+   "answer": "According to the Tuition Refund Schedule [fin-refunds], for a 5-credit undergraduate course withdrawn in week 3, the student would receive a 75% refund of the tuition. \n\nThe calculation for the refund amount would be:\n\\[ 5 \\text{ credits} \\times \\$435 \\text{ per credit} \\times 25\\% = \\$435 \\times 25\\% = \\$108.75 \\]\n\nSo, the student would receive a refund of $108.75.",
+   "citations": [
+    "fin-refunds"
+   ],
+   "retrieved_docs": [
+    "fin-refunds",
+    "pol-registration",
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "fin-refunds#0",
+    "pol-registration#3",
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "pol-course-load#0"
+   ],
+   "latency_ms": 45718,
+   "prompt_tokens": 595,
+   "output_tokens": 118,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "According to the Tuition Refund Schedule [fin-refunds], for a 5-credit undergraduate course withdrawn in week 3, the student would receive a 75% refund of the tuition. \n\nThe calculation for the refund amount would be:\n\\[ 5 \\text{ credits} \\times \\$435 \\text{ per credit} \\times 25\\% = \\$435 \\times 25\\% = \\$108.75 \\]\n\nSo, the student would receive a refund of $108.75.",
+     "latency_ms": 45718.189417006215
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "1,631.25",
+     "1631.25",
+     "1,631",
+     "1631"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m02",
+   "category": "multi_hop",
+   "answer": "To take AI 330 Deep Learning, a student must first complete AI 210 Foundations of Machine Learning and MATH 220. [cat-ai]",
+   "citations": [
+    "cat-ai"
+   ],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#3",
+    "cat-ai#5",
+    "cat-ai#9",
+    "cat-ai#4",
+    "cat-ai#1"
+   ],
+   "latency_ms": 11228,
+   "prompt_tokens": 524,
+   "output_tokens": 38,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "To take AI 330 Deep Learning, a student must first complete AI 210 Foundations of Machine Learning and MATH 220. [cat-ai]",
+     "latency_ms": 11228.232374996878
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "cs 160"
+    ],
+    [
+     "math 201"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 0.5,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m03",
+   "category": "multi_hop",
+   "answer": "AI 340 Natural Language Processing and Large Language Models is offered only in Spring [prog-bs-ai].",
+   "citations": [
+    "prog-bs-ai"
+   ],
+   "retrieved_docs": [
+    "prog-bs-ai",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "prog-bs-ai#1",
+    "cat-ai#3",
+    "cat-ai#1",
+    "prog-bs-ai#0",
+    "cat-ai#4"
+   ],
+   "latency_ms": 9352,
+   "prompt_tokens": 560,
+   "output_tokens": 24,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "AI 340 Natural Language Processing and Large Language Models is offered only in Spring [prog-bs-ai].",
+     "latency_ms": 9352.385749982204
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m04",
+   "category": "multi_hop",
+   "answer": "If a first-year student skips their advising meeting, a registration hold is placed on their account [svc-advising]. Registration for the next quarter opens in week 7 of the current quarter [pol-registration].",
+   "citations": [
+    "svc-advising",
+    "pol-registration"
+   ],
+   "retrieved_docs": [
+    "svc-advising",
+    "pol-registration",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "svc-advising#0",
+    "pol-registration#0",
+    "pol-registration#3",
+    "svc-advising#1",
+    "pol-sap#2"
+   ],
+   "latency_ms": 12388,
+   "prompt_tokens": 475,
+   "output_tokens": 43,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "If a first-year student skips their advising meeting, a registration hold is placed on their account [svc-advising]. Registration for the next quarter opens in week 7 of the current quarter [pol-registration].",
+     "latency_ms": 12388.34512498579
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m05",
+   "category": "multi_hop",
+   "answer": "AI 350 is offered in the Fall quarter, which starts on September 29, 2025, in the 2025-26 academic year. [cal-2025-26]",
+   "citations": [
+    "cal-2025-26"
+   ],
+   "retrieved_docs": [
+    "cal-2025-26",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cal-2025-26#0",
+    "cat-ai#9",
+    "cat-ai#5",
+    "cat-ai#7",
+    "cat-ai#6"
+   ],
+   "latency_ms": 11311,
+   "prompt_tokens": 645,
+   "output_tokens": 51,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "AI 350 is offered in the Fall quarter, which starts on September 29, 2025, in the 2025-26 academic year. [cal-2025-26]",
+     "latency_ms": 11310.71266598883
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m06",
+   "category": "multi_hop",
+   "answer": "The student must have completed AI 330 and AI 340, and they must be a senior. AI 410 is offered in Spring 2026, which starts on 2026-02-01 [cat-ai].",
+   "citations": [
+    "cat-ai"
+   ],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#9",
+    "cat-ai#3",
+    "cat-ai#1",
+    "cat-ai#7",
+    "cat-ai#8"
+   ],
+   "latency_ms": 39958,
+   "prompt_tokens": 528,
+   "output_tokens": 59,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The student must have completed AI 330 and AI 340, and they must be a senior. AI 410 is offered in Spring 2026, which starts on 2026-02-01 [cat-ai].",
+     "latency_ms": 39958.08162499452
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "march 30",
+     "mar 30",
+     "3/30"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 0.5,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m07",
+   "category": "multi_hop",
+   "answer": "The Larkspur Merit Scholarship is kept with a cumulative GPA of at least 3.2, and this GPA is high enough for cum laude honors, as cum laude requires a cumulative GPA of 3.5 or higher. [fin-scholarships] [pol-graduation]",
+   "citations": [
+    "fin-scholarships",
+    "pol-graduation"
+   ],
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "fin-scholarships#0",
+    "pol-graduation#1",
+    "pol-graduation#2",
+    "pol-grading#0",
+    "fin-scholarships#1"
+   ],
+   "latency_ms": 23370,
+   "prompt_tokens": 569,
+   "output_tokens": 64,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The Larkspur Merit Scholarship is kept with a cumulative GPA of at least 3.2, and this GPA is high enough for cum laude honors, as cum laude requires a cumulative GPA of 3.5 or higher. [fin-scholarships] [pol-graduation]",
+     "latency_ms": 23370.410583011108
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "re:\\b(not|no|isn't|is not|below|lower|falls short|insufficient)\\b"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m08",
+   "category": "multi_hop",
+   "answer": "In Fall 2025, a student submitting AI-assisted work without disclosing it would be considered a Level 2 academic integrity violation. This violation is handled under the Academic Integrity Policy and referred to the Academic Integrity Board. [pol-ai-use-2025]",
+   "citations": [
+    "pol-ai-use-2025"
+   ],
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-ai-use-2024",
+    "pol-academic-integrity"
+   ],
+   "retrieved_chunks": [
+    "pol-ai-use-2025#5",
+    "pol-ai-use-2024#3",
+    "pol-ai-use-2024#2",
+    "pol-academic-integrity#0",
+    "pol-ai-use-2025#3"
+   ],
+   "latency_ms": 15499,
+   "prompt_tokens": 592,
+   "output_tokens": 58,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "In Fall 2025, a student submitting AI-assisted work without disclosing it would be considered a Level 2 academic integrity violation. This violation is handled under the Academic Integrity Policy and referred to the Academic Integrity Board. [pol-ai-use-2025]",
+     "latency_ms": 15499.162249994697
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m09",
+   "category": "multi_hop",
+   "answer": "CS 210 is a prerequisite for both CS 310 and AI 210. [cat-cs] [cat-ai]",
+   "citations": [
+    "cat-cs",
+    "cat-ai"
+   ],
+   "retrieved_docs": [
+    "cat-cs",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-cs#4",
+    "cat-ai#1",
+    "cat-ai#3",
+    "cat-cs#3",
+    "cat-ai#4"
+   ],
+   "latency_ms": 11850,
+   "prompt_tokens": 496,
+   "output_tokens": 33,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "CS 210 is a prerequisite for both CS 310 and AI 210. [cat-cs] [cat-ai]",
+     "latency_ms": 11849.576209002407
+    }
+   ],
+   "correct": false,
+   "abstained": false,
+   "missing": [
+    [
+     "math 201"
+    ]
+   ],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m10",
+   "category": "multi_hop",
+   "answer": "The total tuition for the full M.S. in Data Science program at 2025-26 graduate rates is calculated as follows: 45 credits \u00d7 $665 per credit = $29,925. [fin-tuition-2025-26]",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "cat-ds",
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_chunks": [
+    "prog-ms-ds#0",
+    "prog-ms-ds#2",
+    "cat-ds#1",
+    "cat-ds#3",
+    "fin-tuition-2025-26#1"
+   ],
+   "latency_ms": 14691,
+   "prompt_tokens": 512,
+   "output_tokens": 63,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The total tuition for the full M.S. in Data Science program at 2025-26 graduate rates is calculated as follows: 45 credits \u00d7 $665 per credit = $29,925. [fin-tuition-2025-26]",
+     "latency_ms": 14691.306583001278
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "m11",
+   "category": "multi_hop",
+   "answer": "The student can take MLOps in the Spring 2026 quarter, which starts on March 30, 2026. [cal-2025-26]",
+   "citations": [
+    "cal-2025-26"
+   ],
+   "retrieved_docs": [
+    "cat-ai",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#7",
+    "cal-2025-26#0",
+    "cat-ai#1",
+    "cat-ai#9",
+    "cat-ai#2"
+   ],
+   "latency_ms": 12071,
+   "prompt_tokens": 676,
+   "output_tokens": 43,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The student can take MLOps in the Spring 2026 quarter, which starts on March 30, 2026. [cal-2025-26]",
+     "latency_ms": 12070.858082995983
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t01",
+   "category": "temporal",
+   "answer": "Yes, generative AI tools are permitted on coursework by default, with disclosure, unless the course syllabus restricts or prohibits them. [pol-ai-use-2025]",
+   "citations": [
+    "pol-ai-use-2025"
+   ],
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-ai-use-2024"
+   ],
+   "retrieved_chunks": [
+    "pol-ai-use-2025#1",
+    "pol-ai-use-2024#1",
+    "pol-ai-use-2025#2",
+    "pol-ai-use-2024#2",
+    "pol-ai-use-2024#0"
+   ],
+   "latency_ms": 12339,
+   "prompt_tokens": 479,
+   "output_tokens": 39,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Yes, generative AI tools are permitted on coursework by default, with disclosure, unless the course syllabus restricts or prohibits them. [pol-ai-use-2025]",
+     "latency_ms": 12339.054917014437
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t02",
+   "category": "temporal",
+   "answer": "The current undergraduate tuition per credit is $435 [fin-tuition-2025-26].",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "pol-course-load#0",
+    "pol-course-load#1",
+    "pol-grading#3"
+   ],
+   "latency_ms": 5306,
+   "prompt_tokens": 459,
+   "output_tokens": 25,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The current undergraduate tuition per credit is $435 [fin-tuition-2025-26].",
+     "latency_ms": 5305.867416987894
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t03",
+   "category": "temporal",
+   "answer": "The undergraduate tuition per credit in 2024-25 was $415 per credit [fin-tuition-2024-25].",
+   "citations": [
+    "fin-tuition-2024-25"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2024-25",
+    "fin-tuition-2025-26",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2024-25#0",
+    "fin-tuition-2025-26#1",
+    "pol-course-load#0",
+    "fin-tuition-2025-26#0",
+    "fin-tuition-2024-25#1"
+   ],
+   "latency_ms": 11709,
+   "prompt_tokens": 499,
+   "output_tokens": 35,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The undergraduate tuition per credit in 2024-25 was $415 per credit [fin-tuition-2024-25].",
+     "latency_ms": 11709.185624989914
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t04",
+   "category": "temporal",
+   "answer": "The technology fee per quarter is $110 for every enrolled student [fin-tuition-2025-26].",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "svc-research-computing",
+    "pol-course-load"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2025-26#2",
+    "fin-tuition-2024-25#1",
+    "svc-research-computing#1",
+    "pol-course-load#1",
+    "fin-tuition-2025-26#0"
+   ],
+   "latency_ms": 8786,
+   "prompt_tokens": 504,
+   "output_tokens": 28,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The technology fee per quarter is $110 for every enrolled student [fin-tuition-2025-26].",
+     "latency_ms": 8786.167749989545
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t05",
+   "category": "temporal",
+   "answer": "Under the 2024 policy, the default rule for using generative AI on graded work was that its use was prohibited unless the instructor explicitly permitted it in writing. [pol-ai-use-2024]",
+   "citations": [
+    "pol-ai-use-2024"
+   ],
+   "retrieved_docs": [
+    "pol-ai-use-2024",
+    "pol-ai-use-2025"
+   ],
+   "retrieved_chunks": [
+    "pol-ai-use-2024#1",
+    "pol-ai-use-2025#0",
+    "pol-ai-use-2024#0",
+    "pol-ai-use-2025#1",
+    "pol-ai-use-2025#2"
+   ],
+   "latency_ms": 11534,
+   "prompt_tokens": 507,
+   "output_tokens": 47,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Under the 2024 policy, the default rule for using generative AI on graded work was that its use was prohibited unless the instructor explicitly permitted it in writing. [pol-ai-use-2024]",
+     "latency_ms": 11533.883083990077
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t06",
+   "category": "temporal",
+   "answer": "Under the current policy, an AI-use disclosure statement must name the tool and describe how it was used (for example: brainstorming, drafting, debugging or editing) [pol-ai-use-2025].",
+   "citations": [
+    "pol-ai-use-2025"
+   ],
+   "retrieved_docs": [
+    "pol-ai-use-2025",
+    "pol-ai-use-2024"
+   ],
+   "retrieved_chunks": [
+    "pol-ai-use-2025#3",
+    "pol-ai-use-2024#2",
+    "pol-ai-use-2025#5",
+    "pol-ai-use-2025#1",
+    "pol-ai-use-2024#3"
+   ],
+   "latency_ms": 13069,
+   "prompt_tokens": 522,
+   "output_tokens": 45,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "Under the current policy, an AI-use disclosure statement must name the tool and describe how it was used (for example: brainstorming, drafting, debugging or editing) [pol-ai-use-2025].",
+     "latency_ms": 13069.31158399675
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t07",
+   "category": "temporal",
+   "answer": "No, students cannot use SMS text-message codes for multi-factor authentication as of Fall 2025. [svc-it-accounts]",
+   "citations": [
+    "svc-it-accounts"
+   ],
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "prog-bs-ai",
+    "prog-ms-ds"
+   ],
+   "retrieved_chunks": [
+    "svc-it-accounts#0",
+    "svc-it-accounts#1",
+    "prog-bs-ai#3",
+    "prog-ms-ds#1",
+    "prog-bs-ai#2"
+   ],
+   "latency_ms": 7641,
+   "prompt_tokens": 451,
+   "output_tokens": 29,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "No, students cannot use SMS text-message codes for multi-factor authentication as of Fall 2025. [svc-it-accounts]",
+     "latency_ms": 7641.1477089859545
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 1.0
+  },
+  {
+   "id": "t08",
+   "category": "temporal",
+   "answer": "The lab fee per lab course in 2025-26 is $75. [fin-tuition-2025-26]",
+   "citations": [
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_docs": [
+    "fin-tuition-2024-25",
+    "fin-tuition-2025-26"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2024-25#1",
+    "fin-tuition-2025-26#2",
+    "fin-tuition-2025-26#0",
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0"
+   ],
+   "latency_ms": 6852,
+   "prompt_tokens": 539,
+   "output_tokens": 34,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "The lab fee per lab course in 2025-26 is $75. [fin-tuition-2025-26]",
+     "latency_ms": 6852.134749991819
+    }
+   ],
+   "correct": true,
+   "abstained": false,
+   "missing": [],
+   "citations_valid": true,
+   "cites_gold": true,
+   "retrieval_recall": 1.0,
+   "retrieval_hit": true,
+   "retrieval_mrr": 0.5
+  },
+  {
+   "id": "u01",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading",
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25"
+   ],
+   "retrieved_chunks": [
+    "fin-scholarships#0",
+    "pol-graduation#1",
+    "pol-grading#0",
+    "fin-tuition-2025-26#2",
+    "fin-tuition-2024-25#1"
+   ],
+   "latency_ms": 6947,
+   "prompt_tokens": 590,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 6946.659999986878
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u02",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "svc-it-accounts",
+    "cal-2025-26",
+    "svc-advising",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "svc-it-accounts#0",
+    "cal-2025-26#0",
+    "svc-advising#1",
+    "svc-advising#0",
+    "pol-sap#2"
+   ],
+   "latency_ms": 7599,
+   "prompt_tokens": 585,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 7598.584708990529
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u03",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "prog-ms-ds",
+    "cat-ds"
+   ],
+   "retrieved_chunks": [
+    "prog-ms-ds#0",
+    "prog-ms-ds#1",
+    "cat-ds#3",
+    "prog-ms-ds#2",
+    "cat-ds#1"
+   ],
+   "latency_ms": 6195,
+   "prompt_tokens": 466,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 6194.584000011673
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u04",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "svc-research-computing",
+    "pol-grading"
+   ],
+   "retrieved_chunks": [
+    "svc-research-computing#0",
+    "svc-research-computing#4",
+    "svc-research-computing#1",
+    "svc-research-computing#3",
+    "pol-grading#0"
+   ],
+   "latency_ms": 7170,
+   "prompt_tokens": 514,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 7169.563125004061
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u05",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources. The sources only contain information for the 2025-26 academic year and do not provide tuition rates for the 2026-27 academic year.",
+   "citations": [],
+   "retrieved_docs": [
+    "fin-tuition-2025-26",
+    "fin-tuition-2024-25",
+    "pol-course-load",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "fin-tuition-2025-26#1",
+    "fin-tuition-2024-25#0",
+    "fin-tuition-2025-26#0",
+    "pol-course-load#0",
+    "cal-2025-26#0"
+   ],
+   "latency_ms": 13266,
+   "prompt_tokens": 631,
+   "output_tokens": 47,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources. The sources only contain information for the 2025-26 academic year and do not provide tuition rates for the 2026-27 academic year.",
+     "latency_ms": 13265.942458005156
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u06",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "svc-library",
+    "pol-registration",
+    "cal-2025-26"
+   ],
+   "retrieved_chunks": [
+    "svc-library#1",
+    "svc-library#0",
+    "svc-library#2",
+    "pol-registration#0",
+    "cal-2025-26#0"
+   ],
+   "latency_ms": 8827,
+   "prompt_tokens": 581,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 8826.561333989957
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u07",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#5",
+    "cat-ai#3",
+    "cat-ai#7",
+    "cat-ai#4",
+    "cat-ai#9"
+   ],
+   "latency_ms": 6898,
+   "prompt_tokens": 511,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 6898.438000003807
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u08",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "cat-cs",
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-cs#2",
+    "cat-cs#1",
+    "cat-ai#2",
+    "cat-ai#1",
+    "cat-cs#3"
+   ],
+   "latency_ms": 7240,
+   "prompt_tokens": 466,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 7240.433208004106
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u09",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "cat-ai"
+   ],
+   "retrieved_chunks": [
+    "cat-ai#3",
+    "cat-ai#5",
+    "cat-ai#4",
+    "cat-ai#9",
+    "cat-ai#1"
+   ],
+   "latency_ms": 6114,
+   "prompt_tokens": 519,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 6113.872250018176
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  },
+  {
+   "id": "u10",
+   "category": "unanswerable",
+   "answer": "I don't know based on the provided sources.",
+   "citations": [],
+   "retrieved_docs": [
+    "fin-scholarships",
+    "pol-graduation",
+    "pol-grading",
+    "svc-research-computing",
+    "pol-sap"
+   ],
+   "retrieved_chunks": [
+    "fin-scholarships#0",
+    "pol-graduation#1",
+    "pol-grading#0",
+    "svc-research-computing#0",
+    "pol-sap#2"
+   ],
+   "latency_ms": 3751,
+   "prompt_tokens": 530,
+   "output_tokens": 11,
+   "steps": [
+    {
+     "agent": "rag",
+     "detail": "retrieved 5 chunks",
+     "output": "I don't know based on the provided sources.",
+     "latency_ms": 3750.849832984386
+    }
+   ],
+   "correct": true,
+   "abstained": true,
+   "missing": [],
+   "citations_valid": null,
+   "cites_gold": null
+  }
+ ]
+}

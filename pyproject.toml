@@ -1,0 +1,26 @@
+[project]
+name = "groundtruth"
+version = "0.1.0"
+description = "A RAG and multi-agent system that measures itself against ground truth"
+authors = [{ name = "Clark Ngo" }]
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.5.9",
+    "fastapi>=0.143.0",
+    "httpx>=0.28.1",
+    "mlflow>=3.17.1",
+    "pyyaml>=6.0.3",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+gt = "groundtruth.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
